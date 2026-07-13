@@ -1,78 +1,5 @@
-<?php
-session_start();
-?>
+<?php include("includes/header.php"); ?>
 
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-
-	<meta charset="UTF-8">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<title>Second-Hand book Marketplace</title>
-
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-	
-	<link rel="stylesheet" href="css/style.css">
-
-</head>
-
-<body>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
-	<div class="container">
-		
-		<a class="navbar-brand" href="index.php">
-			Book Marketplace
-		</a>
-		
-		<div class="ms-auto">
-			
-			<?php
-			
-			if(isset($_SESSION['user_id'])){
-				
-				if($_SESSION['role'] == "staff"){
-					
-					echo '<a href="staff/dashboard.php" class="btn btn-warning me-2">
-							dashboard
-							</a>';
-				} else{
-					
-					echo '<a href="customer/dashboard.php" class="btn btn-success me-2">
-							Dashboard
-							</a>';
-				}
-				
-				echo '<a href="logout.php" class="btn btn-danger">
-						Logout
-						</a>';
-						
-			} else{
-				
-				?>
-				
-				<a href="login.php" class="btn btn-outline-light me-2">
-					login
-				</a>
-				
-				<a href="register.php" class="btn btn-success">
-					Register
-				</a>
-				
-				<?php
-			}
-			?>
-			
-		</div>
-		
-	</div>
-	
-</nav>
 
 <div class="container text-center mt-5 text-white">
 
@@ -168,6 +95,4 @@ session_start();
 
 </div>
 
-</body>
-
-</html>
+<?php include("includes/footer.php"); ?>

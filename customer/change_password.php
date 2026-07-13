@@ -8,9 +8,9 @@ include("../authentication/check_login.php");
 
 <head>
 
-<title>Change Password</title>
+	<title>Change Password</title>
 
-<link href="https://csn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
@@ -27,6 +27,13 @@ include("../authentication/check_login.php");
 			<label>Current Password</label>
 			<input type="password" name="current_password" class="form-control" required>
 			
+		</div>
+		
+		<div class="mb-3">
+			
+			<label>New Password</label>
+			<input type="password" name="new_password" class="form-control" required>
+		
 		</div>
 		
 		<div class="mb-3">

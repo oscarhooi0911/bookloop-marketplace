@@ -98,6 +98,35 @@
 						</a>
 					
 					</div>
+					
+					<!--handle error-->
+					<?php
+					if(isset($_GET['error'])){
+						if($_GET['error'] == "wrongpassword"){
+							echo '<div class="text-danger small text-center mb-3">
+									Incorrect password.
+									</div>';
+						}
+						
+						if($_GET['error'] == "emailnotfound"){
+							echo '<div class="text-danger small text-center mb-3"">
+									Email address not found.
+									</div>';
+						}
+						
+						if($_GET['error'] == "loginrequired"){
+							echo '<div class="text-danger small text-center mb-3">
+									Please login first.
+									</div>';
+						}
+						
+						if($_GET['error'] == "success"){
+							echo '<div class="alert alert-success">
+									Registration successful. Please login.
+									</div>';
+						}
+					}
+					?>
 				
 					<button type="submit" class="btn btn-login w-100">
 				

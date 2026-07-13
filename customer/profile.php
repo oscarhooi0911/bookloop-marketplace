@@ -1,7 +1,7 @@
 <?php
 
 include("../authentication/check_login.php");
-include(../authntication/databas.php");
+include("../database/database.php");
 
 $id = $_SESSION['user_id'];
 
@@ -23,9 +23,9 @@ $user = mysqli_fetch_assoc($result);
 
 <head>
 
-<title>My profile</title>
+	<title>My profile</title>
 
-link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
@@ -49,7 +49,7 @@ link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.c
 
 <th>Name</th>
 
-<td><?php echo $user['full_name']: ?></td>
+<td><?php echo $user['full_name']; ?></td>
 
 </tr>
 
@@ -65,7 +65,7 @@ link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.c
 
 <th>Phone</th>
 
-<td><?php echo $user['phone']: ?></td>
+<td><?php echo $user['phone']; ?></td>
 
 </tr>
 

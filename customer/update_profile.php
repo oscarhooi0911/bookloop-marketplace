@@ -1,12 +1,12 @@
 <?php
 include("../authentication/check_login.php");
-include("../authentication/database.php");
+include("../database/database.php");
 
 $id=$_SESSION['user_id'];
 
 $full_name = trim($_POST['full_name']);
 $phone = trim($_POST['phone']);
-$address = rtim($_POST['address']);
+$address = trim($_POST['address']);
 
 $filename="";
 
@@ -20,19 +20,19 @@ if($_FILES['profile_picture']['name'] != ""){
 	);
 		
 	$stmt = mysqli_prepare($conn,
-		"UPDATE users SET full_name=?, phone=?, address=?, WHERE user_id=?");
+		"UPDATE users SET full_name=?, phone=?, address=?, profile_picture=? WHERE user_id=?");
 
 	mysqli_stmt_bind_param(
-		$stmt, "sssi", $full_name, $phone, $address, $id
+		$stmt, "ssssi", $full_name, $phone, $address, $filename, $id
 	);
 } else{
 	$stmt = mysqli_prepare($conn, "UPDATE users SET full_name=?, phone=?, address=? WHERE user_id=?");
 	
-	mysqli_stmt_bid_param($stmt, "sssi", $full_name, $phone, $address, $id);
+	mysqli_stmt_bind_param($stmt, "sssi", $full_name, $phone, $address, $id);
 }
 
 mysqli_stmt_execute($stmt);
-header("Location: profile.php);
+header("Location: profile.php");
 
 ?>
 

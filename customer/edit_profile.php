@@ -1,6 +1,6 @@
 <?php
 include("../authentication/check_login.php");
-include("../authentication/database.php");
+include("../database/database.php");
 
 $id = $_SESSION['user_id'];
 
@@ -44,7 +44,7 @@ $user = mysqli_fetch_assoc($result);
 	
 		<label>Email</label>
 	
-		<input type="email" class="form-control" calue=<?php echo htmlspecialchard($user['email']); ?>" readonly>
+		<input type="email" class="form-control" value=<?php echo htmlspecialchars($user['email']); ?>" readonly>
 	
 	</div>
 	
@@ -52,7 +52,7 @@ $user = mysqli_fetch_assoc($result);
 	
 		<label>Phone</label>
 		
-		<input type="text" name="phone" class="form-control" calue"<?php echo htmlspecialchars($user['phone']); ?>">
+		<input type="text" name="phone" class="form-control" value"<?php echo htmlspecialchars($user['phone']); ?>">
 		
 	</div>
 	

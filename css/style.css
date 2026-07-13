@@ -6,4 +6,18 @@ body{
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	min-height: 100vh;
+	display: flex;
+	flex-direction:  column;
+}
+
+footer{
+	margin-top: auto;
+}
+
+.navbar-brand{
+	font-weight: bold;
+}
+
+.btn{
+	border-radius: 8px;
 }

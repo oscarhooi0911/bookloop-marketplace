@@ -170,8 +170,17 @@
 						required>
 
 					</div>
-
-
+					
+					<?php
+					if(isset($_GET['error'])){
+						if($_GET['error'] == "email_exists"){
+							echo '<div class="text-danger small text-center mb-3">
+									Email already exists. Please use another email.
+									</div>';
+						}
+						
+					}
+					?>
 
 					<button 
 					type="submit"

@@ -1,5 +1,5 @@
 <?php
-include(../autentication/check_login.php");
+include("../authentication/check_login.php");
 
 if($_SESSION['role'] != "customer"){
 	header("Location: ../staff/dashboard.php");
@@ -8,90 +8,92 @@ if($_SESSION['role'] != "customer"){
 ?>
 
 <!DOCTYPE html>
-<heml>
+<html>
+
 <head>
 
-<title>Customer Dashboards</title>
+	<title>Customer Dashboards</title>
 
-<link hred="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-<img src="../upload/profile/<?php echo $user['profile_picture']; ?>" width="70" height="70" class="rounded-circle">
+	<img src="../upload/profile/<?php echo $_SESSION['profile_picture']; ?>" width="70" height="70" class="rounded-circle">
 
-<div class="container mt-5">
+	<div class="container mt-5">
 
-<h2>
-	Welcome
-	<?php echo $_SESSION['name']; ?>
-</h2>
+		<h2>
+			Welcome
+			<?php echo $_SESSION['name']; ?>
+		</h2>
 
-<hr>
+		<hr>
 
-<div class="row">
-<div class="col-md-4">
+		<div class="row">
+			<div class="col-md-4">
 
-<div class="card">
+				<div class="card">
 
-<div class="card-body">
+					<div class="card-body">
 
-<h4>My Profile</h4>
+						<h4>My Profile</h4>
 
-<a href="profile.php class="btn btn-primary">
-View Profile
-</a>
+						<a href="profile.php" class="btn btn-primary">
+							View Profile
+						</a>
 
-</div>
+					</div>
 
-</div>
+				</div>
 
-</div>
+			</div>
 
-<div class="col-md-4">
+			<div class="col-md-4">
 
-<div class="card">
+				<div class="card">
 
-<div class="card-body">
+					<div class="card-body">
+		
+						<h4>My Books</h4>
 
-<h4>My Books</h4>
+						<button class="btn btn-success">
+							Coming Soon
+						</button>
 
-<button class="btn btn-seccess">
-Coming Soon
-</button>
+					</div>
 
-</div>
+				</div>
 
-</div>
+			</div>
 
-</div>
+			<div class="col-md-4">
 
-<div class="col-md-4">
+				<div class="card">
 
-div class="card">
+					<div class="card-body">
 
-<div class="card-body">
+						<h4>WishList</h4>
 
-<h4>WishList</h4>
+						<button class="btn btn-warning">
+							Coming Soon
+						</button>
+		
+					</div>
 
-<button class="btn btn-warning">
-Coming Soon
-</button>
+				</div>
 
-</div>
+			</div>
 
-</div>
+			<br>
 
-</div>
-
-<br>
-
-<a href="../logout/php" class="btn btn-danger">
-logout
-</a>
-
-</div>
+			<a href="../logout.php" class="btn btn-danger">
+				logout
+			</a>
+		</div>
+		
+	</div>
 
 </body>
 
