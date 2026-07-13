@@ -24,52 +24,124 @@ if(session_status() == PHP_SESSION_NONE){
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+	<main>
 	
-	<div class="container">
-	
-		<a class="navbar-brand" href="/bookloop-marketplace/index.php">
-			Bookloop Marketpalce
-		</a>
+		<div class="container">
 		
-		<div class="ms-auto">
-		
-			<?php
+			<a class="navbar-brand" href="/bookloop-marketplace/index.php">
+				Bookloop Marketpalce
+			</a>
 			
-			if(isset($_SESSION['user_id'])){
-				
-				if($_SESSION['role'] == "staff"){
+			<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNav">
 					
-					echo '<a href="/bookloop-marketplace/staff/dashboard.php"
-					class="btn btn-warning me-2">
-					dashboard
-					</a>';
-				} else{
-					echo '<a href="/bookloop-marketplace/customer/dashboard.php"
-					class="btn btn-success me-2">
-					dashboard
-					</a>';
-				}
-				
-				echo '<a href="/bookloop-marketplace/logout.php"
-				class="btn btn-danger">
-				logout
-				</a>';
-			} else{
-				echo '<a href="/bookloop-marketplace/login.php"
-				class="btn btn-outline-light me-2">
-				Login
-				</a>
-				
-				<a href="/bookloop-marketplace/register.php"
-				class="btn btn-success">
-				Register
-				</a>';
-			}
+					<span class="navbar-toggler-icon"></span>
+					
+			</button>
 			
-			?>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				
+				<?php if(isset($_SESSION['user_id'])){ ?>
+				
+					<?php if($_SESSION['role'] == "customer"){ ?>
+				
+						<ul class="navbar-nav ms-auto align-items-center">
+						
+							<li class="nav-item">
+							
+								<a class="nav-link" href="/bookloop-marketplace/index.php">
+									Home
+								</a>
+								
+							</li>
+							
+							<li class="nav-item">
+							
+								<!--replaace with correct php-->
+								<a class="nav-link" href="/bookloop-marketplace/customer/buy_book.php">
+									Buy
+								</a>
+								
+							</li>
+							
+							<li class="nav-item">
+							
+								<!--replaace with correct php-->
+								<a class="nav-link" href="/bookloop-marketplace/customer/sell_book.php">
+									Sell
+								</a>
+								
+							</li>
+							
+							<li class="nav-item">
+							
+								<!--replaace with correct php-->
+								<a class="nav-link" href="/bookloop-marketplace/customer/profile.php">
+									Profile
+								</a>
+								
+							</li>
+							
+							<li class="nav-item ms-2">
+							
+								<a class="btn btn-danger" href="/bookloop-marketplace/logout.php">
+									logout
+								</a>
+								
+							</li>
+								
+						</ul>
+					
+					<?php } else{ ?>
+					
+						<ul class="navbar-nav ms auto align-items-center">
+						
+							<li class="nav-item">
+								
+								<a class="nav-link" href="/bookloop-marketplace/staff/dashboard.php">
+									Dashboard
+								</a>
+								
+							</li>
+							
+							<li class="nav-item ms-2">
+								
+								<a class="btn btn-danger" href="/bookloop-marketplace/logout.php">
+									Logout
+								</a>
+								
+							</li>
+							
+						</ul>
+					
+					<?php } ?>
+				
+			<?php } else { ?>
+			
+				<div class="ms-auto">
+				
+					<a href="/bookloop-marketplace/login.php"
+						class="btn btn-outline-light me-2">
+						Login
+					</a>
+					
+					<a href="/bookloop-marketplace/register.php"
+						class="btn btn-success">
+						Register
+					</a>
+				
+				</div>
+				
+			<?php } ?>	
+			
+		
+				
+				
+			</div>
 			
 		</div>
 		
-	</div>
 	
 </nav>

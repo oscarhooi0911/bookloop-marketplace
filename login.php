@@ -18,9 +18,10 @@
 
 </head>
 
-<body>
+<body class="image">
 
 <div class="container-fluid vh-100">
+
 	<div class="row h-100">
 	
 		<!--Left side-->

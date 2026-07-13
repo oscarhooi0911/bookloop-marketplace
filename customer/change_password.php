@@ -1,59 +1,66 @@
 <?php
 include("../authentication/check_login.php");
+include("../includes/header.php");
 ?>
 
-<!DOCTYPE html>
 
-<html>
 
-<head>
+<div class="container d-flex justify-content-center align-items-center" style=min-height: 80vh;">
 
-	<title>Change Password</title>
+	<div class="card shadow p-4" style="width:450px; corder-radius:15px;">
+	
+		<h2 class="text-center mb-4">
+			Change Password
+		</h2>
 
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
-</head>
-
-<body>
-
-<div class="container mt-5">
-
-	<h2>Change Password</h2>
-
-	<form action="update_password.php" method="POST">
-		
-		<div class="mb-3">
-		
-			<label>Current Password</label>
-			<input type="password" name="current_password" class="form-control" required>
+		<form action="update_password.php" method="POST">
 			
-		</div>
-		
-		<div class="mb-3">
+			<div class="mb-3">
 			
-			<label>New Password</label>
-			<input type="password" name="new_password" class="form-control" required>
-		
-		</div>
-		
-		<div class="mb-3">
-		
-			<label>Confirm New Password</label>
+				<label>Current Password</label>
+				<input type="password" name="current_password" class="form-control" required>
+				
+			</div>
 			
-			<input type="password" name="confirm_password" class="form-control" required>
+			<div class="mb-3">
+				
+				<label>New Password</label>
+				<input type="password" name="new_password" class="form-control" required>
+			
+			</div>
+			
+			<div class="mb-3">
+			
+				<label>Confirm New Password</label>
+				
+				<input type="password" name="confirm_password" class="form-control" required>
+			
+			</div>
+			
+			<div class="d-grid">
+				
+				<button type="submit" class="btn btn-primary">
+			
+					Update Password
+			
+				</button>
+			
+			</div>
+			
+			<div class="text-venter mt-3">
+				
+				<a href="profile.php" class="btn btn-outline-secondary">
+					Back to profile
+				</a>
+				
+			</div>
+			
+		</form>
 		
-		</div>
-		
-		<button class="btn btn-primary">
-		
-		Update Password
-		
-		</button>
-		
-	</form>
+	</div>
 
 </div>
 
-</body>
+<?php include("../includes/footer.php"); ?>
 
-</html>
+
