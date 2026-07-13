@@ -8,8 +8,16 @@ $address = trim($_POST['address']);
 $password = $_POST['password'];
 $confirm_password = $_POST['confirm_password'];
 
+//Check if new password matches confirm password
 if($password != $confirm_password){
-	die("The password you entered is incorrect.");
+	header("Location: ../register.php?error=nomatch");
+	exit();
+}
+
+//Check password strength - length at least 8 at least 1 uppercase, 1 character and 1 number
+if(!preg_match('/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&#])[A-Za-z\d@$!%*?&#]{8,}$/', $new_password)){
+	header("Location: change_password.php?error=weakpassword");
+	exit();
 }
 
 $stmt = mysqli_prepare($conn, "SELECT user_id FROM users WHERE email=?");

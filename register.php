@@ -179,7 +179,26 @@
 									</div>';
 						}
 						
+						if($_GET['error'] == "nomatch"){
+							echo '<div class="text-danger small text-center mb-3">
+									Password and confirm password do not match.
+									</div>';
+							}
+							
+						if($_GET['error'] == "weakpassword"){
+							echo '<div class="text-danger small text-center mb-3">
+									Password must contain:
+									<ul>
+										<li>At least 8 characters</li>
+										<li>At least 1 uppercase letter (A-Z)</li>
+										<li>At least 1 number (0-9)</li>
+										<li>At least 1 special character (@, #, $, !)</li>
+									</ul>
+									</div>';
+						}
+						
 					}
+				
 					?>
 
 					<button 

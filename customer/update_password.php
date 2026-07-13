@@ -10,7 +10,14 @@ $confirm_password = $_POST['confirm_password'];
 
 //Check if new password matches confirm password
 if($new_password != $confirm_password){
-	die("New password and confirm password do not match.");
+	header("Location: change_password.php?error=nomatch");
+	exit();
+}
+
+//Check password strength - length at least 8 at least 1 uppercase, 1 character and 1 number
+if(!preg_match('/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&#])[A-Za-z\d@$!%*?&#]{8,}$/', $new_password)){
+	header("Location: change_password.php?error=weakpassword");
+	exit();
 }
 
 //Get current password hash from database
@@ -24,12 +31,14 @@ $user = mysqli_fetch_assoc($result);
 
 //Check user exist
 if(!$user){
-	die("User not found.");
+	header("Location: change_password.php?error=usernotfound");
+	exit();
 }
 	
 //Verify current password
 if(!password_verify($current_password, $user['password'])){
-	die("Current password is incorrect");
+	header("Location: change_password.php?error=wrongcurrent");
+	exit();
 }
 
 //Hash new password
@@ -41,10 +50,11 @@ $stmt = mysqli_prepare($conn, "UPDATE users SET password=? WHERE user_id=?");
 mysqli_stmt_bind_param($stmt, "si", $new_hash, $user_id);
 
 if(mysqli_stmt_execute($stmt)){
-	header("Location: profile.php?password=success");
+	header("Location:change_password.php?success=1");
 	exit();
 } else{
-	echo "Failed to update password.";
+	header("Location: change_password.php?error=failed");
+	exit();
 }
 
 ?>
