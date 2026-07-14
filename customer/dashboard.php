@@ -65,7 +65,7 @@ include("../includes/header.php");
         <div class="card-body">
 
             <ul class="nav nav-pills">
-
+				<!--Replace the "#" to the php-->
                 <li class="nav-item">
                     <a class="nav-link active" href="#">Home</a>
                 </li>

@@ -4,7 +4,7 @@ body{
 }
 
 .left-panel{
-	background: url("../image/bookshelf.jpg") center center;
+	background: url("../images/bookshelf.jpg") center center;
 	background-size: cover;
 	position: relative;
 }

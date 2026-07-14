@@ -171,6 +171,7 @@
 
 					</div>
 					
+					<!--check error-->
 					<?php
 					if(isset($_GET['error'])){
 						if($_GET['error'] == "email_exists"){

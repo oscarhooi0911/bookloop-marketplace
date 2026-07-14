@@ -19,6 +19,6 @@ INSERT INTO users (full_name, email, password, role)
 VALUES(
 'System Administrator',
 'admin@bookstore.com',
-'admin123',
+'$2y$10$bGMdkaI3OvL7fMxJCp4.3.f4HUwrC8bw/nFk9GJYNjx3g4/bq0PVu',
 'staff'
 );

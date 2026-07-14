@@ -29,7 +29,7 @@ if($user = mysqli_fetch_assoc($result)){
 			header("Location:../staff/dashboard.php");
 			exit();
 		} else{
-			header("Location:../customer/dashboard.php");
+			header("Location:../index.php");
 			exit();
 		}
 	} else{

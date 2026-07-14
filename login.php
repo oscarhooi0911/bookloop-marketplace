@@ -94,7 +94,7 @@
 						
 						</div>
 					
-						<a href="#">
+						<a href="forgot_password.php">
 							Forgot Password?
 						</a>
 					
