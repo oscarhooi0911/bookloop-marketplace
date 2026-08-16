@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS secondhand_book_marketplace;
 USE secondhand_book_marketplace;
 
---table for user(authentication), books(sale), cart, review
+-- table for user(authentication), books(sale), cart, review
 CREATE TABLE IF NOT EXISTS users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(100) NOT NULL,
