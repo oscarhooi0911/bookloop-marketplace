@@ -42,7 +42,7 @@ $image_file = !empty($book['image']) ? $book['image'] : 'default_book.jpg';
 
 <div class="book-detail-container" >
 	<div class="book-detail-img-wrapper">
-        <img src="../images/<?php echo htmlspecialchars($image_file); ?>" 
+        <img src="../image/<?php echo htmlspecialchars($image_file); ?>" 
              alt="<?php echo htmlspecialchars($book['title']); ?>" 
              class="book-detail-img">
     </div>
