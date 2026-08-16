@@ -1,106 +1,392 @@
-html{
-	height: 100%;
+:root {
+    --primary-color: #4a6fa5;
+    --primary-dark: #335384;
+    --secondary-color: #ff6b6b;
+    --accent-color: #ffd166;
+    --bg-color: #f7f9fc;
+    --card-bg: #ffffff;
+    --text-color: #2b2d42;
+    --text-muted: #6c757d;
+    --success-color: #2ec4b6;
+    --danger-color: #e63946;
+    --border-radius: 10px;
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 12px 25px rgba(0, 0, 0, 0.12);
+    --transition: all 0.25s ease-in-out;
 }
 
-body{
-	background: #f5f5f5;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
 
-main{
-	flex: 1;
+html {
+    height: 100%;
 }
 
-footer{
-	margin-top: auto;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-.navbar-brand{
-	font-weight: bold;
+body {
+    background: #f5f5f5;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.dashboard{
-	background: white;
-	min-height: 100vh;
-	padding-top: 20px;
+main {
+    flex: 1;
 }
 
-.image{
-	background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-	url("../image/bookshelf.jpg");
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	height: 45vh;
+footer {
+    margin-top: auto;
 }
 
-.image .container{
-	height: 100%;
+.navbar-brand {
+    font-weight: bold;
 }
 
-.image h1{
-	font-weight: bold;
+.dashboard {
+    background: white;
+    min-height: 100vh;
+    padding-top: 20px;
 }
 
-.image p{
-	max-width: 600px;
+.image {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url("../image/bookshelf.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 45vh;
 }
 
-.feature-img{
-	width: 70%;
-	height:250px;
-	object-fit: cover;
-	border-radius: 20px;
+.image .container {
+    height: 100%;
 }
 
-.feature-box{
-	background: white;
-	border-radius: 15px;
-	padding: 20px;
-	margin-bottom: 20px;
-	min-height: 250px;
-	display: flex;
-	align-items: center;
+.image h1 {
+    font-weight: bold;
 }
 
-.feature-box h3{
-	font-weight: bold;
+.image p {
+    max-width: 600px;
 }
 
-.feature-box:hover{
-	transform: translateY(-5px);
-	transition: 0.3s;
+.feature-img {
+    width: 70%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
 }
 
-.container.py-5{
-	padding-top: 50px !important;
-	padding-bottom: 50px !important;
+.feature-box {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
 }
 
-.card{
-	border-radius: 15px;
-	transition: 0.3s;
+.feature-box h3 {
+    font-weight: bold;
 }
 
-.card:hover{
-	transform: translateY(-5px);
+.feature-box:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
 }
 
-.rounded-circle{
-	object-fit: cover;
+.container.py-5 {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
 }
 
-.nav-pills .nav-link{
-	color:#555;
-	font-weight: 600;
+.card {
+    border-radius: 15px;
+    transition: 0.3s;
 }
 
-.nav-pills .nav-link.active{
-	background: #8B5E3C;
+.card:hover {
+    transform: translateY(-5px);
 }
 
-.btn{
-	border-radius: 10px;
+.rounded-circle {
+    object-fit: cover;
+}
+
+.nav-pills .nav-link {
+    color: #555;
+    font-weight: 600;
+}
+
+.nav-pills .nav-link.active {
+    background: #8B5E3C;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    color: white;
+    padding: 1.2rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+header nav {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+header nav a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+header nav a:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    flex: 1;
+}
+
+h2, h3 {
+    color: var(--primary-dark);
+    margin-bottom: 12px;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.book-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+    border-top: 4px solid var(--primary-color);
+}
+
+.book-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.book-card h3 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.book-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.price {
+    color: var(--success-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 12px 0;
+}
+
+.btn {
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(74, 111, 165, 0.3);
+    transition: var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(74, 111, 165, 0.4);
+    filter: brightness(1.05);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, var(--secondary-color), var(--danger-color));
+    box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
+}
+
+.btn-danger:hover {
+    box-shadow: 0 6px 14px rgba(230, 57, 70, 0.4);
+}
+
+form {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #dcdfe6;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.15);
+}
+
+table {
+    width: 100%;
+    background: var(--card-bg);
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+tr:hover {
+    background-color: #f1f5f9;
+}
+
+.book-detail-container {
+    display: flex;
+    gap: 30px;
+    background: var(--card-bg, #ffffff);
+    padding: 25px;
+    border-radius: var(--border-radius, 10px);
+    box-shadow: var(--shadow, 0 8px 20px rgba(0, 0, 0, 0.06));
+    align-items: flex-start;
+}
+
+.book-detail-img-wrapper {
+    flex: 0 0 200px;
+    max-width: 200px;
+    width: 200%;
+}
+
+.book-detail-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1.2rem 1rem;
+        gap: 15px;
+    }
+
+    header nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .book-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+
+    .book-detail-container {
+        flex-direction: column;
+    }
+
+    .book-detail-img-wrapper {
+        flex: 1;
+        max-width: 200%;
+    }
+
+    .book-detail-img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    table, th, td {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+    }
+}
+
 }
