@@ -1,3 +1,4 @@
+/*Global variable*/
 :root {
     --primary-color: #4a6fa5;
     --primary-dark: #335384;
@@ -22,6 +23,7 @@
     font-family: sans-serif;
 }
 
+/*HTML and Body*/
 html {
     height: 100%;
 }
@@ -42,6 +44,7 @@ body {
     flex-direction: column;
 }
 
+/*Main content and Footer*/
 main {
     flex: 1;
 }
@@ -50,16 +53,19 @@ footer {
     margin-top: auto;
 }
 
+/*Navigation bar*/
 .navbar-brand {
     font-weight: bold;
 }
 
+/*Dashboard*/
 .dashboard {
     background: white;
     min-height: 100vh;
     padding-top: 20px;
 }
 
+/*Hero Image*/
 .image {
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
         url("../image/bookshelf.jpg");
@@ -81,6 +87,7 @@ footer {
     max-width: 600px;
 }
 
+/*Feature section in Home Page*/
 .feature-img {
     width: 70%;
     height: 250px;
@@ -112,6 +119,7 @@ footer {
     padding-bottom: 50px !important;
 }
 
+/*Bootstrap Cards*/
 .card {
     border-radius: 15px;
     transition: 0.3s;
@@ -125,6 +133,7 @@ footer {
     object-fit: cover;
 }
 
+/*Navigation Pills*/
 .nav-pills .nav-link {
     color: #555;
     font-weight: 600;
@@ -134,6 +143,7 @@ footer {
     background: #8B5E3C;
 }
 
+/*Header*/
 header {
     background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
     color: white;
@@ -151,6 +161,7 @@ header h1 {
     color: #ffffff;
 }
 
+/*Header Navigation*/
 header nav {
     display: flex;
     gap: 15px;
@@ -171,6 +182,7 @@ header nav a:hover {
     color: #ffffff;
 }
 
+/*Main Container*/
 .container {
     width: 90%;
     max-width: 1200px;
@@ -178,17 +190,20 @@ header nav a:hover {
     flex: 1;
 }
 
+/*Heading*/
 h2, h3 {
     color: var(--primary-dark);
     margin-bottom: 12px;
 }
 
+/*Book Grid*/
 .book-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 25px;
 }
 
+/*Book Card*/
 .book-card {
     background: var(--card-bg);
     padding: 20px;
@@ -226,6 +241,7 @@ h2, h3 {
     margin-bottom: 4px;
 }
 
+/*Book Price*/
 .price {
     color: var(--success-color);
     font-size: 1.3rem;
@@ -233,6 +249,7 @@ h2, h3 {
     margin: 12px 0;
 }
 
+/*Buttons*/
 .btn {
     border-radius: 10px;
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
@@ -264,6 +281,7 @@ h2, h3 {
     box-shadow: 0 6px 14px rgba(230, 57, 70, 0.4);
 }
 
+/*Form and those Input Fields*/
 form {
     background: var(--card-bg);
     border-radius: var(--border-radius);
@@ -289,6 +307,7 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.15);
 }
 
+/*Tables*/
 table {
     width: 100%;
     background: var(--card-bg);
@@ -319,6 +338,7 @@ tr:hover {
     background-color: #f1f5f9;
 }
 
+/*Books Details*/
 .book-detail-container {
     display: flex;
     gap: 30px;
@@ -389,4 +409,196 @@ tr:hover {
     }
 }
 
+/*Below will be for Marketplace*/
+/* Marketplace variable */
+:root {
+    --ink: #18212f;
+    --brand: #315a86;
+    --brand-dark: #1f3f63;
+    --mint: #51b49a;
+    --surface: #ffffff;
+    --page: #f3f7fb;
+}
+
+/*Body*/
+body {
+    background: radial-gradient(circle at top right, #e6f1fb 0, transparent 30%), var(--page);
+    color: var(--ink);
+}
+
+/*Navigation Bar*/
+.site-navbar {
+    background: linear-gradient(115deg, #152b45, #315a86 62%, #3b7897) !important;
+    padding: 0.85rem 0;
+    box-shadow: 0 8px 28px rgba(25, 57, 90, 0.2);
+}
+
+.site-navbar .container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    flex: 0 1 auto;
+}
+
+.site-navbar .navbar-brand {
+    font-size: 1.25rem;
+    letter-spacing: 0.2px;
+    color: #ffffff !important;
+    font-weight: 800;
+}
+
+.site-navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.55);
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.84) !important;
+    border-radius: 999px;
+    padding: 0.45rem 0.85rem !important;
+}
+
+.navbar .nav-link:hover {
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff !important;
+}
+
+/*Hero Section*/
+.image {
+    height: 530px;
+    position: relative;
+    background-image: linear-gradient(90deg, rgba(12, 30, 49, 0.88), rgba(19, 49, 75, 0.58)), url("../image/bookshelf.jpg");
+}
+
+.hero-content {
+    max-width: 680px;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.image h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+}
+
+.image .lead {
+    font-size: 1.15rem;
+    opacity: 0.92;
+}
+
+/*Feature*/
+.feature-box {
+    overflow: hidden;
+    border: 1px solid #e6edf5;
+    box-shadow: 0 12px 35px rgba(33, 62, 91, 0.08) !important;
+}
+
+.feature-box:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(33, 62, 91, 0.15) !important;
+}
+
+/*Homepage Feature Layout*/
+.feature-row {
+    max-width: 1080px;
+    margin-left: max(5%, calc((100% - 1200px) / 2));
+    margin-right: auto;
+}
+
+.feature-row-right {
+    margin-left: auto;
+    margin-right: max(5%, calc((100% - 1200px) / 2));
+}
+
+.feature-img {
+    width: min(100%, 370px);
+}
+
+/*Cards*/
+.card {
+    border: 1px solid rgba(40, 71, 104, 0.1);
+    box-shadow: 0 10px 30px rgba(33, 62, 91, 0.08);
+}
+
+.card:hover {
+    transform: none;
+}
+
+/*Login Buttons*/
+.btn-primary, .btn-login {
+    border: 0;
+    background: linear-gradient(135deg, var(--brand), #487eaa);
+    box-shadow: 0 8px 18px rgba(49, 90, 134, 0.22);
+}
+
+.btn-primary:hover, .btn-login:hover {
+    background: linear-gradient(135deg, var(--brand-dark), var(--brand));
+}
+
+/*Outline Primary Button*/
+.btn-outline-primary {
+    border-color: var(--brand);
+    color: #ffffff;
+    background: var(--brand);
+    font-weight: 700;
+}
+
+.btn-outline-primary:hover {
+    border-color: var(--brand-dark);
+    background: var(--brand-dark);
+    color: #ffffff;
+}
+
+/*Form*/
+.form-control, .form-select {
+    min-height: 44px;
+    border-color: #d4e0ec;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #5c8cba;
+    box-shadow: 0 0 0 0.22rem rgba(76, 134, 184, 0.16);
+}
+
+/*Footer*/
+footer {
+    margin-top: 4rem !important;
+    background: #152b45 !important;
+}
+
+/*Homepage Feature position*/
+.feature-row {
+    width: 82% !important;
+    max-width: 1080px;
+    margin-left: 5% !important;
+    margin-right: auto !important;
+}
+
+.feature-row-right {
+    margin-left: auto !important;
+    margin-right: 5% !important;
+}
+
+/*Marketplace Layout*/
+@media (max-width: 768px) {
+    .image { height: 460px; }
+    .feature-box { text-align: center; }
+    .feature-img { margin: 0 auto; }
+    .feature-row,
+    .feature-row-right {
+        width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
 }

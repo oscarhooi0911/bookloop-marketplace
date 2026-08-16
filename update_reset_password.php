@@ -1,6 +1,14 @@
 <?php include("database/database.php");
 
-$user_id = $_POST['user_id'];
+if (session_status() === PHP_SESSION_NONE) {
+	session_start();
+}
+if ($_SERVER['REQUEST_METHOD'] !== 'POST' || empty($_SESSION['reset_user_id'])) {
+	header("Location: forgot_password.php");
+	exit();
+}
+
+$user_id = (int) $_SESSION['reset_user_id'];
 
 $password = $_POST['password'];
 
@@ -17,12 +25,7 @@ if(strlen($password) <8 ||
 !preg_match("/[A-Z]/", $password) ||
 !preg_match("/[0-9]/", $password) ||
 !preg_match("/[@#$!]/", $password)){
-	echo "Password must contain:";
-	echo "<br>- At least 8 characters";
-	echo "<br>- One uppercase letter";
-	echo "<br>- One number";
-	echo "<br>- One special character (@ # $ !)";
-	
+	header("Location: reset_password.php?error=weakpassword");
 	exit();
 	
 }
@@ -36,6 +39,7 @@ $stmt = mysqli_prepare($conn, "UPDATE users SET password=? WHERE user_id=?");
 mysqli_stmt_bind_param($stmt, "si", $hash, $user_id);
 
 if(mysqli_stmt_execute($stmt)){
+	unset($_SESSION['reset_user_id']);
 	header("Location: login.php?reset=success");
 	exit();
 } else{

@@ -60,7 +60,7 @@
 							Email Address
 						</label>
 						
-						<input type="email" name="email" class="form=control" placeholder="Enter your email" required>
+						<input type="email" name="email" class="form-control" placeholder="Enter your email" required>
 						
 					</div>
 					

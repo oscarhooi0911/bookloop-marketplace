@@ -57,10 +57,7 @@ include("../includes/header.php");
 						View and manage customer accounts.
 					</p>
 					
-					<!--Replace with correct php name-->
-					<a href="manage_users.php" class="btn btn-primary">
-						open
-					</a>
+					<button class="btn btn-primary" disabled>Coming soon</button>
 					
 				</div>
 				
@@ -84,10 +81,7 @@ include("../includes/header.php");
 						Approve and manage book listings.
 					</p>
 					
-					<!--Replace with correct pgp name-->
-					<a href="manage_books.php" class="btn btn-success">
-						open
-					</a>
+					<button class="btn btn-success" disabled>Coming soon</button>
 					
 				</div>
 				
@@ -111,10 +105,7 @@ include("../includes/header.php");
 						View customer orders.
 					</p>
 					
-					<!--Replace with correct php name-->
-					<a href="manage_orders.php" class="btn btn-warning">
-						open
-					</a>
+					<button class="btn btn-warning" disabled>Coming soon</button>
 					
 				</div>
 				
@@ -138,10 +129,7 @@ include("../includes/header.php");
 						Generate sales and user reports.
 					</p>
 					
-					<!--Replace with correct php name-->
-					<a href="reports.php" class="btn btn-info">
-						open
-					</a>
+					<button class="btn btn-info" disabled>Coming soon</button>
 					
 				</div>
 				

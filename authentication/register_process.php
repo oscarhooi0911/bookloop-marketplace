@@ -15,8 +15,8 @@ if($password != $confirm_password){
 }
 
 //Check password strength - length at least 8 at least 1 uppercase, 1 character and 1 number
-if(!preg_match('/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&#])[A-Za-z\d@$!%*?&#]{8,}$/', $new_password)){
-	header("Location: change_password.php?error=weakpassword");
+if(!preg_match('/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%?&#])[A-Za-z\d@$!%*?&#]{8,}$/', $password)){
+	header("Location: ../register.php?error=weakpassword");
 	exit();
 }
 
@@ -49,7 +49,8 @@ $hashedPassword
 );
 
 if(mysqli_stmt_execute($stmt)){
-	header("Location: ../login.php?register=success");
+	header("Location: ../login.php?error=success");
+	exit();
 	
 } else{
 	echo "Fail to register";

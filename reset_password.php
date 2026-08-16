@@ -2,24 +2,35 @@
 
 include("database/database.php");
 
-$email = $_POST['email'];
+if (session_status() === PHP_SESSION_NONE) {
+	session_start();
+}
 
-$stmt = mysqli_prepare($conn, "SELECT user_id FROM users WHERE email=?");
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['email'])) {
+	$email = trim($_POST['email']);
 
-mysqli_stmt_bind_param($stmt, "s", $email);
+	$stmt = mysqli_prepare($conn, "SELECT user_id FROM users WHERE email=?");
 
-mysqli_stmt_execute($stmt);
+	mysqli_stmt_bind_param($stmt, "s", $email);
 
-$result = mysqli_stmt_get_result($stmt);
+	mysqli_stmt_execute($stmt);
 
-$user = mysqli_fetch_assoc($result);
+	$result = mysqli_stmt_get_result($stmt);
+
+	$user = mysqli_fetch_assoc($result);
 
 
-if(!$user){
+	if(!$user){
 
-	header("Location: forgot_password.php?error=emailnotfound");
+		header("Location: forgot_password.php?error=emailnotfound");
+		exit();
+
+	}
+
+	$_SESSION['reset_user_id'] = (int) $user['user_id'];
+} elseif (empty($_SESSION['reset_user_id'])) {
+	header("Location: forgot_password.php");
 	exit();
-
 }
 
 ?>
@@ -85,12 +96,6 @@ if(!$user){
 				</p>
 
 				<form action="update_reset_password.php" method="POST">
-
-
-					<input type="hidden" 
-					name="user_id" 
-					value="<?php echo $user['user_id']; ?>">
-
 
 
 					<div class="mb-3">

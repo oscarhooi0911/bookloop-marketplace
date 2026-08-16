@@ -110,7 +110,7 @@
 						}
 						
 						if($_GET['error'] == "emailnotfound"){
-							echo '<div class="text-danger small text-center mb-3"">
+							echo '<div class="text-danger small text-center mb-3">
 									Email address not found.
 									</div>';
 						}
@@ -126,6 +126,12 @@
 									Registration successful. Please login.
 									</div>';
 						}
+					}
+
+					if(isset($_GET['reset']) && $_GET['reset'] == "success"){
+						echo '<div class="alert alert-success">
+								Password updated. Please login.
+								</div>';
 					}
 					?>
 				

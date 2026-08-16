@@ -2,7 +2,6 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-}
 ?>
 
 <!DOCTYPE html>
@@ -17,10 +16,10 @@ if (session_status() === PHP_SESSION_NONE) {
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark site-navbar" style="background: linear-gradient(115deg, #152b45, #315a86 62%, #3b7897);">
     <div class="container align-items-center">
         <a class="navbar-brand mb-0" href="/bookloop-marketplace/index.php">
-            BookLoop Marketpalce
+            BookLoop Marketplace
         </a>
 
         <button class="navbar-toggler" type="button"
@@ -37,16 +36,16 @@ if (session_status() === PHP_SESSION_NONE) {
                             <a class="nav-link" href="/bookloop-marketplace/index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/bookloop-marketplace/customer/buy_book.php">Buy</a>
+                            <a class="nav-link" href="/bookloop-marketplace/customer/browse_books.php">Browse books</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/bookloop-marketplace/customer/sell_book.php">Sell</a>
+                            <a class="nav-link" href="/bookloop-marketplace/customer/cart.php">Cart</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/bookloop-marketplace/customer/dashboard.php">Dashboard</a>
                         </li>
                     </ul>
-                    <a class="btn btn-danger ms-3" href="/bookloop-marketplace/logout.php">logout</a>
+                    <a class="btn btn-danger ms-3" href="/bookloop-marketplace/logout.php">Logout</a>
                 <?php } else { ?>
                     <ul class="navbar-nav ms-auto align-items-center">
                         <li class="nav-item">
@@ -66,3 +65,5 @@ if (session_status() === PHP_SESSION_NONE) {
         </div>
     </div>
 </nav>
+
+<main>

@@ -4,14 +4,15 @@
 
     <div class="container d-flex align-items-center">
 
-        <div class="text-start text-white">
+        <div class="text-start text-white hero-content">
+            <span class="hero-eyebrow">Sustainable stories, shared again</span>
             <h1>
                 Second-Hand Book Marketplace
             </h1>
 
             <p class="lead mb-4">
                 Discover affordable second-hand books from readers.
-                buy books you love, sell books you no longer need,
+                Buy books you love, sell books you no longer need,
                 and give every book a new journey.
             </p>
 
@@ -40,7 +41,7 @@
 
 </div>
 
-<div class="container py-3">
+<div class="container py-3 feature-row">
     <div class="row align-items-center feature-box shadow">
         <div class="col-md-6">
             <h3>📚 Buy Books</h3>
@@ -55,7 +56,7 @@
     </div>
 </div>
 
-<div class="container py-3">
+<div class="container py-3 feature-row feature-row-right">
     <div class="row align-items-center feature-box shadow">
         <div class="col-md-6 text-center">
             <img src="image/sell-books.jpg" class="img-fluid rounded shadow feature-img">
@@ -69,7 +70,7 @@
     </div>
 </div>
 
-<div class="container py-3">
+<div class="container py-3 feature-row">
     <div class="row align-items-center feature-box shadow">
         <div class="col-md-6">
             <h3>🌱 Reuse Books</h3>
