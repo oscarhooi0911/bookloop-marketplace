@@ -3,179 +3,191 @@
 
 <head>
 
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Second-Hand Book Marketplace - Login</title>
-	
-	<!--Bootstrap-->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-	
-	<!--CSS-->
-	<link rel="stylesheet" href="css/login.css">
-	
-	<!--Bootstrap icons-->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Second-Hand Book Marketplace - Login</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/login.css">
+
+   
 
 </head>
 
-<body class="image">
+<body>
 
-<div class="container-fluid vh-100">
+<div class="auth-page">
 
-	<div class="row h-100">
-	
-		<!--Left side-->
-		<div class="col-lg-7 d-none d-lg-flex left-panel">
-		
-			<div class="overlay">
-				<h1>Second-hand Book Marketplace</h1>
-				<p>
-					Buy. Sell. Read Again.
-				</p>
-			</div>
-		
-		</div>
-		
-		<!--Right side-->
-		<div class="col-lg-5 d-flex align-items-center justify-content-center">
-			
-			<div class="login-card shadow">
-				
-				<h2 class="text-center mb-2">
-					Welcome back
-				</h2>
-				
-				<p class="text-center text-muted mb-4">
-					Login to your account
-				</p>
-				
-				<form action="authentication/login_process.php" method="POST">
-					
-					<div class="mb-3">
-						<label class="form-label">
-							Email Address
-						</label>
-						
-						<input type="email" class="form-control" name="email" placeholder="Enter your email" required>
-					
-					</div>
-					
-					<div class="mb-3">
-						
-						<label class="form-label">
-							Password
-						</label>
-							
-						<div class="input-group">
-						
-							<input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
-						
-							<button class="btn btn-outline-secondary" type="button" onclick="togglePassword()">
-						
-								<i class="bi bi-eye" id="eyeIcon"></i>
-						
-							</button>
-						
-						</div>
-					
-					</div>
-				
-					<div class="d-flex justify-content-between mb-4">
-				
-						<div class="form-check">
-					
-							<input class="form-check-input" type="checkbox" id="remember">
-						
-							<label class="form-check-label" for="remember">
-						
-								Remember me
-							
-							</label>
-						
-						</div>
-					
-						<a href="forgot_password.php">
-							Forgot Password?
-						</a>
-					
-					</div>
-					
-					<!--handle error-->
-					<?php
-					if(isset($_GET['error'])){
-						if($_GET['error'] == "wrongpassword"){
-							echo '<div class="text-danger small text-center mb-3">
-									Incorrect password.
-									</div>';
-						}
-						
-						if($_GET['error'] == "emailnotfound"){
-							echo '<div class="text-danger small text-center mb-3">
-									Email address not found.
-									</div>';
-						}
-						
-						if($_GET['error'] == "loginrequired"){
-							echo '<div class="text-danger small text-center mb-3">
-									Please login first.
-									</div>';
-						}
-						
-						if($_GET['error'] == "success"){
-							echo '<div class="alert alert-success">
-									Registration successful. Please login.
-									</div>';
-						}
-					}
+    <!-- Left Side -->
+    <div class="auth-left">
 
-					if(isset($_GET['reset']) && $_GET['reset'] == "success"){
-						echo '<div class="alert alert-success">
-								Password updated. Please login.
-								</div>';
-					}
-					?>
-				
-					<button type="submit" class="btn btn-login w-100">
-				
-						Login
-					
-					</button>
-				</form>
+        <div class="auth-overlay">
+
+            <h1>Second-Hand Book Marketplace</h1>
+
+            <p>Buy. Sell. Read Again.</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Right Side -->
+    <div class="auth-right">
+
+        <div class="auth-card">
+
+            <h2>Welcome back</h2>
+
+            <p class="auth-subtitle">
+                Login to your account
+            </p>
+
+
+            <form action="authentication/login_process.php" method="POST">
+
+                <!-- Email -->
+                <div class="form-group">
+
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="form-group">
+
+                    <label for="password">Password</label>
+
+                    <div class="password-group">
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+							type="button"
+							class="password-toggle"
+							onclick="togglePassword()"
+							aria-label="Show or hide password"
+						>
+							<span id="eyeIcon">👁</span>
+						</button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Remember Me / Forgot Password -->
+                <div class="login-options">
+
+                    <div class="remember-me">
+
+                        <input type="checkbox" id="remember" name="remember">
+
+                        <label for="remember">Remember me</label>
+
+                    </div>
+
+                    <a href="forgot_password.php">Forgot Password?</a>
+
+                </div>
+
+                <!-- Error Messages -->
+                <?php
+                if (isset($_GET['error'])) {
+
+                    if ($_GET['error'] == "wrongpassword") {
+
+                        echo '
+                        <div class="error-message">
+                            Incorrect password.
+                        </div>';
+                    }
+
+                    if ($_GET['error'] == "emailnotfound") {
+
+                        echo '
+                        <div class="error-message">
+                            Email address not found.
+                        </div>';
+                    }
+
+                    if ($_GET['error'] == "loginrequired") {
+
+                        echo '
+                        <div class="error-message">
+                            Please login first.
+                        </div>';
+                    }
+
+                    if ($_GET['error'] == "success") {
+
+                        echo '
+                        <div class="success-message">
+                            Registration successful. Please login.
+                        </div>';
+                    }
+                }
+
+                if (isset($_GET['reset']) && $_GET['reset'] == "success") {
+
+                    echo '
+                    <div class="success-message">
+                        Password updated. Please login.
+                    </div>';
+                }
+                ?>
+
+                <!-- Login Button -->
+                <button type="submit" class="auth-button">Login</button>
+
+            </form>
+
+            <hr>
+
+            <!-- Register Link -->
+            <p class="auth-footer">
 			
-				<hr>
-			
-				<p class="text-center">
-			
-					Don't have an account?
-				
-					<a href="register.php">
-						Register Here
-					</a>
-				
-				</p>
-			
-			</div>
-		
-		</div>
-	
-	</div>
+                Don't have an account?
+                <a href="register.php">Register Here</a>
+
+            </p>
+
+        </div>
+
+    </div>
 
 </div>
 
 <script>
 
-function togglePassword(){
-	
-	let password=document.getElementById("password");
-	let eye=document.getElementById("eyeIcon");
-	
-	if(password.type === "password"){
-		password.type="text";
-		eye.className="bi bi-eye-slash";	
-	} else{
-		password.type="password";
-		eye.className="bi bi-eye";	
-	}
+function togglePassword() {
+    const password = document.getElementById("password");
+    const eyeIcon = document.getElementById("eyeIcon");
+
+    if (password.type === "password") {
+        password.type = "text";
+        eyeIcon.textContent = "🙈";
+    } else {
+
+        password.type = "password";
+        eyeIcon.textContent = "👁";
+    }
 }
 
 </script>

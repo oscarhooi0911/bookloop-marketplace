@@ -3,241 +3,273 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Second-Hand Book Marketplace - Register</title>
+    <title>Second-Hand Book Marketplace - Register</title>
 
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- CSS -->
-<link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/login.css">
 
 </head>
 
+<body class="auth-page">
 
-<body>
+    <div class="auth-left">
 
+        <div class="auth-overlay">
 
-<div class="container-fluid vh-100">
+            <h1>Second-Hand Book Marketplace</h1>
 
-	<div class="row h-100">
+            <p>Buy. Sell. Read Again.</p>
 
+        </div>
 
-		<!-- Left Side -->
+    </div>
 
-		<div class="col-lg-7 d-none d-lg-flex left-panel">
 
-			<div class="overlay">
+    <div class="auth-right">
 
-				<h1>
-					Second-Hand Book Marketplace
-				</h1>
+        <div class="auth-card">
 
-				<p>
-					Buy. Sell. Read Again.
-				</p>
+            <h2>Create Account</h2>
 
-			</div>
+            <p class="auth-subtitle">
+                Register to start buying and selling books
+            </p>
 
-		</div>
 
+            <form action="authentication/register_process.php" method="POST">
 
+                <!-- Full Name -->
+                <div class="form-group">
 
-		<!-- Right Side -->
+                    <label for="full_name">
+                        Full Name
+                    </label>
 
-		<div class="col-lg-5 d-flex align-items-center justify-content-center">
+                    <input
+                        type="text"
+                        id="full_name"
+                        name="full_name"
+                        placeholder="Enter your full name"
+                        required
+                    >
 
+                </div>
 
-			<div class="login-card shadow">
 
+                <!-- Email -->
+                <div class="form-group">
 
-				<h2 class="text-center mb-2">
-					Create Account
-				</h2>
+                    <label for="email">
+                        Email Address
+                    </label>
 
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
 
-				<p class="text-center text-muted mb-4">
-					Register to start buying and selling books
-				</p>
+                </div>
 
 
+                <!-- Phone -->
+                <div class="form-group">
 
-				<form action="authentication/register_process.php" method="POST">
+                    <label for="phone">
+                        Phone Number
+                    </label>
 
+                    <input
+                        type="text"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                    >
 
-					<div class="mb-3">
+                </div>
 
-						<label class="form-label">
-							Full Name
-						</label>
 
+                <!-- Address -->
+                <div class="form-group">
 
-						<input 
-						type="text"
-						class="form-control"
-						name="full_name"
-						placeholder="Enter your full name"
-						required>
+                    <label for="address">
+                        Address
+                    </label>
 
-					</div>
+                    <textarea
+                        id="address"
+                        name="address"
+                        rows="2"
+                        placeholder="Enter your address"
+                    ></textarea>
 
+                </div>
 
 
-					<div class="mb-3">
+                <!-- Password -->
+                <div class="form-group">
 
-						<label class="form-label">
-							Email Address
-						</label>
+                    <label for="register-password">
+                        Password
+                    </label>
 
+                    <div class="password-group">
 
-						<input 
-						type="email"
-						class="form-control"
-						name="email"
-						placeholder="Enter your email"
-						required>
+                        <input
+                            type="password"
+                            id="register-password"
+                            name="password"
+                            placeholder="Create password"
+                            required
+                        >
 
-					</div>
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            onclick="togglePassword('register-password', 'register-eye')"
+                            aria-label="Show or hide password"
+                        >
+                            <span id="register-eye">👁</span>
+                        </button>
 
+                    </div>
 
+                </div>
 
 
-					<div class="mb-3">
+                <!-- Confirm Password -->
+                <div class="form-group">
 
-						<label class="form-label">
-							Phone Number
-						</label>
+                    <label for="confirm-password">
+                        Confirm Password
+                    </label>
 
+                    <div class="password-group">
 
-						<input 
-						type="text"
-						class="form-control"
-						name="phone"
-						placeholder="Enter your phone number">
+                        <input
+                            type="password"
+                            id="confirm-password"
+                            name="confirm_password"
+                            placeholder="Confirm password"
+                            required
+                        >
 
-					</div>
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            onclick="togglePassword('confirm-password', 'confirm-eye')"
+                            aria-label="Show or hide confirm password"
+                        >
+                            <span id="confirm-eye">👁</span>
+                        </button>
 
+                    </div>
 
+                </div>
 
 
-					<div class="mb-3">
+                <!-- Error Messages -->
+                <?php
 
-						<label class="form-label">
-							Address
-						</label>
+                if (isset($_GET['error'])) {
 
+                    if ($_GET['error'] == "email_exists") {
 
-						<textarea
-						class="form-control"
-						name="address"
-						rows="2"
-						placeholder="Enter your address"></textarea>
+                        echo '
+                        <div class="error-message">
+                            Email already exists. Please use another email.
+                        </div>';
 
+                    }
 
-					</div>
 
-					<div class="mb-3">
+                    if ($_GET['error'] == "nomatch") {
 
-						<label class="form-label">
-							Password
-						</label>
+                        echo '
+                        <div class="error-message">
+                            Password and confirm password do not match.
+                        </div>';
 
+                    }
 
-						<input 
-						type="password"
-						class="form-control"
-						name="password"
-						placeholder="Create password"
-						required>
 
-					</div>
+                    if ($_GET['error'] == "weakpassword") {
 
+                        echo '
+                        <div class="error-message">
+                            <p>Password must contain:</p>
 
-					<div class="mb-3">
+                            <ul>
+                                <li>At least 8 characters</li>
+                                <li>At least 1 uppercase letter (A-Z)</li>
+                                <li>At least 1 number (0-9)</li>
+                                <li>At least 1 special character (@, #, $, !)</li>
+                            </ul>
 
-						<label class="form-label">
-							Confirm Password
-						</label>
+                        </div>';
 
+                    }
 
-						<input 
-						type="password"
-						class="form-control"
-						name="confirm_password"
-						placeholder="Confirm password"
-						required>
+                }
 
-					</div>
-					
-					<!--check error-->
-					<?php
-					if(isset($_GET['error'])){
-						if($_GET['error'] == "email_exists"){
-							echo '<div class="text-danger small text-center mb-3">
-									Email already exists. Please use another email.
-									</div>';
-						}
-						
-						if($_GET['error'] == "nomatch"){
-							echo '<div class="text-danger small text-center mb-3">
-									Password and confirm password do not match.
-									</div>';
-							}
-							
-						if($_GET['error'] == "weakpassword"){
-							echo '<div class="text-danger small text-center mb-3">
-									Password must contain:
-									<ul>
-										<li>At least 8 characters</li>
-										<li>At least 1 uppercase letter (A-Z)</li>
-										<li>At least 1 number (0-9)</li>
-										<li>At least 1 special character (@, #, $, !)</li>
-									</ul>
-									</div>';
-						}
-						
-					}
-				
-					?>
+                ?>
 
-					<button 
-					type="submit"
-					class="btn btn-login w-100">
 
-						Register
+                <!-- Register Button -->
+                <button
+                    type="submit"
+                    class="auth-button"
+                >
+                    Register
+                </button>
 
-					</button>
+            </form>
 
 
+            <hr>
 
-				</form>
 
+            <p class="auth-footer">
 
+                Already have an account?
 
-				<hr>
+                <a href="login.php">
+                    Login Here
+                </a>
 
+            </p>
 
+        </div>
 
-				<p class="text-center">
+    </div>
 
-					Already have an account?
 
-					<a href="login.php">
-						Login Here
-					</a>
+    <script>
 
-				</p>
+    function togglePassword(passwordId, eyeId) {
 
+        const password = document.getElementById(passwordId);
+        const eye = document.getElementById(eyeId);
 
-			</div>
+        if (password.type === "password") {
 
-		</div>
+            password.type = "text";
+            eye.textContent = "🙈";
 
-	</div>
+        } else {
 
-</div>
+            password.type = "password";
+            eye.textContent = "👁";
+
+        }
+
+    }
+
+    </script>
 
 </body>
 
