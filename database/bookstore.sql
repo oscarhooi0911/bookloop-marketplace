@@ -33,8 +33,18 @@ CREATE TABLE IF NOT EXISTS cart (
     book_id INT NOT NULL,
     quantity INT NOT NULL DEFAULT 1,
     UNIQUE KEY unique_cart_item (user_id, book_id),
-    CONSTRAINT fk_cart_user FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
-    CONSTRAINT fk_cart_book FOREIGN KEY (book_id) REFERENCES books(book_id) ON DELETE CASCADE
+    CONSTRAINT cart_user FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    CONSTRAINT cart_book FOREIGN KEY (book_id) REFERENCES books(book_id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS wishlist (
+    wishlist_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    book_id INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE KEY unique_wishlist_item (user_id, book_id),
+    CONSTRAINT wishlist_user FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    CONSTRAINT wishlist_book FOREIGN KEY (book_id) REFERENCES books(book_id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS reviews (
@@ -44,9 +54,9 @@ CREATE TABLE IF NOT EXISTS reviews (
     rating TINYINT NOT NULL,
     comment TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    CONSTRAINT chk_review_rating CHECK (rating BETWEEN 1 AND 5),
-    CONSTRAINT fk_review_book FOREIGN KEY (book_id) REFERENCES books(book_id) ON DELETE CASCADE,
-    CONSTRAINT fk_review_user FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+    CONSTRAINT review_rating CHECK (rating BETWEEN 1 AND 5),
+    CONSTRAINT review_book FOREIGN KEY (book_id) REFERENCES books(book_id) ON DELETE CASCADE,
+    CONSTRAINT review_user FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
 INSERT IGNORE INTO users (full_name, email, password, role) VALUES

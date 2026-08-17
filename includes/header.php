@@ -41,6 +41,9 @@ if (session_status() === PHP_SESSION_NONE) {
                         <li class="nav-item">
                             <a class="nav-link" href="/bookloop-marketplace/customer/cart.php">Cart</a>
                         </li>
+						<li class="nav-item">
+							<a class="nav-link" href="/bookloop-marketplace/customer/wishlist.php">Wishlist</a>
+						</li>
                         <li class="nav-item">
                             <a class="nav-link" href="/bookloop-marketplace/customer/dashboard.php">Dashboard</a>
                         </li>
