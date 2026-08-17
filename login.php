@@ -182,7 +182,7 @@ function togglePassword() {
 
     if (password.type === "password") {
         password.type = "text";
-        eyeIcon.textContent = "🙈";
+        eyeIcon.textContent = "⌣";
     } else {
 
         password.type = "password";

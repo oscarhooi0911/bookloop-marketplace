@@ -258,7 +258,7 @@
         if (password.type === "password") {
 
             password.type = "text";
-            eye.textContent = "🙈";
+            eye.textContent = "⌣";
 
         } else {
 
