@@ -2,16 +2,24 @@ CREATE DATABASE IF NOT EXISTS secondhand_book_marketplace;
 USE secondhand_book_marketplace;
 
 -- table for user(authentication), books(sale), cart, review
-CREATE TABLE IF NOT EXISTS users (
-    user_id INT AUTO_INCREMENT PRIMARY KEY,
-    full_name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    phone VARCHAR(20),
-    address TEXT,
-    profile_picture VARCHAR(255) NOT NULL DEFAULT 'default.png',
-    role ENUM('customer', 'staff') NOT NULL DEFAULT 'customer',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE IF NOT EXISTS books (
+    book_id INT AUTO_INCREMENT PRIMARY KEY,
+    seller_id INT NULL,
+    title VARCHAR(150) NOT NULL,
+    author VARCHAR(100) NOT NULL,
+    genre VARCHAR(50) NOT NULL,
+    language VARCHAR(50) NOT NULL DEFAULT 'English',
+    price DECIMAL(10,2) NOT NULL,
+    quantity INT NOT NULL DEFAULT 1,
+    book_condition VARCHAR(50) NOT NULL,
+    description TEXT,
+    image VARCHAR(255) DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT books_seller
+        FOREIGN KEY (seller_id)
+        REFERENCES users(user_id)
+        ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS books (
