@@ -70,12 +70,17 @@ if (session_status() === PHP_SESSION_NONE) {
                             </a>
                         </li>
 
+						<li class="nav-item">
+							<a class="nav-link" href="/bookloop-marketplace/customer/wishlist.php">
+							Wishlist
+							</a>
+						</li>
+						
                         <li>
                             <a href="/bookloop-marketplace/customer/dashboard.php">
                                 Dashboard
                             </a>
-                        </li>
-						
+
 						<li>
                             <a href="/bookloop-marketplace/customer/contact.php">
                                 Contact Us

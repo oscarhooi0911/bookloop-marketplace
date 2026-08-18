@@ -19,7 +19,6 @@ $user = mysqli_fetch_assoc($result);
 include("../includes/header.php");
 ?>
 
-
 <div class="customer-dashboard">
 
     <!-- Profile Section -->
@@ -67,7 +66,6 @@ include("../includes/header.php");
 
     </div>
 
-
     <!-- Navigation -->
     <div class="dashboard-navigation">
 
@@ -99,7 +97,6 @@ include("../includes/header.php");
 
     </div>
 
-
     <!-- Dashboard Cards -->
     <div class="dashboard-cards">
 
@@ -112,14 +109,13 @@ include("../includes/header.php");
                 <h5>My Books</h5>
 
                 <p>Manage your books for sale.</p>
-				
-				<!--put the php here-->
+
+                <!-- put the PHP here -->
                 <button class="card-button">Coming Soon</button>
 
             </div>
 
         </div>
-
 
         <div class="dashboard-card">
 
@@ -130,8 +126,8 @@ include("../includes/header.php");
                 <h5>Wishlist</h5>
 
                 <p>View your favourite books.</p>
-				
-				<!--put the php here-->
+
+                <!-- put the PHP here -->
                 <button class="card-button">
                     Coming Soon
                 </button>
@@ -139,7 +135,6 @@ include("../includes/header.php");
             </div>
 
         </div>
-
 
         <div class="dashboard-card">
 
@@ -150,13 +145,13 @@ include("../includes/header.php");
                 <h5>Sell a Book</h5>
 
                 <p>Add a new book listing.</p>
-				<!-- put the php here-->
+
+                <!-- put the PHP here -->
                 <button class="card-button">Coming Soon</button>
 
             </div>
 
         </div>
-
 
         <div class="dashboard-card">
 

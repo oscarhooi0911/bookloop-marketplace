@@ -2,7 +2,7 @@
 require_once "../authentication/check_login.php";
 require_once "../database/database.php";
 
-// Buyer features available only for  signed in customer
+// Buyer features available only for signed in customer
 if ($_SESSION['role'] !== 'customer') {
     header('Location: ../staff/dashboard.php');
     exit();
@@ -103,7 +103,7 @@ require_once "../includes/header.php";
                 <div class="book-card-content">
                     <h3><?= htmlspecialchars($book['title']) ?></h3>
                     <p class="book-author"><?= htmlspecialchars($book['author']) ?></p>
-                    <p class="book-info"><?= htmlspecialchars($book['genre']) ?>·<?= htmlspecialchars($book['language']) ?></p>
+                    <p class="book-info"><?= htmlspecialchars($book['genre']) ?> · <?= htmlspecialchars($book['language']) ?></p>
                     <p class="book-price">$<?= number_format((float) $book['price'], 2) ?></p>
                     <a class="custom-button book-detail-button" href="book_detail.php?id=<?= (int) $book['book_id'] ?>">
                         View details

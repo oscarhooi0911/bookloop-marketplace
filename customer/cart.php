@@ -10,26 +10,18 @@ if ($_SESSION['role'] !== 'customer') {
 $userId = (int) $_SESSION['user_id'];
 
 
-/* =========================================================
-   CART ACTIONS
-   ========================================================= */
-
+/*Action*/
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $action = $_POST['action'] ?? '';
 
-
     /* Add book to cart */
-
     if ($action === 'add') {
-
         $bookId = (int) ($_POST['book_id'] ?? 0);
-
         $quantity = max(
             1,
             min(10, (int) ($_POST['quantity'] ?? 1))
         );
-
 
         $book = mysqli_prepare(
             $conn,
@@ -44,9 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         mysqli_stmt_execute($book);
 
-
         if (mysqli_stmt_get_result($book)->fetch_assoc()) {
 
+            // Add to an existing cart line when the same book is selected again.
             $add = mysqli_prepare(
                 $conn,
                 'INSERT INTO cart (user_id, book_id, quantity)
@@ -97,9 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-/* =========================================================
-   GET CART ITEMS
-   ========================================================= */
+/* GET CART ITEMS */
 
 $stmt = mysqli_prepare(
     $conn,
@@ -150,6 +140,7 @@ require_once "../includes/header.php";
 
     <?php else: ?>
         <?php $total = 0; ?>
+
         <!-- Cart Table -->
         <div class="cart-table-wrapper">
             <table class="cart-table">
@@ -162,6 +153,7 @@ require_once "../includes/header.php";
                         <th>Action</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     <?php while ($item = mysqli_fetch_assoc($items)): ?>
                         <?php
@@ -170,6 +162,7 @@ require_once "../includes/header.php";
                             $item['quantity'];
                         $total += $subtotal;
                         ?>
+
                         <tr>
                             <td><?= htmlspecialchars($item['title']) ?></td>
                             <td>RM<?= number_format((float) $item['price'],2) ?></td>
@@ -183,8 +176,10 @@ require_once "../includes/header.php";
                                 </form>
                             </td>
                         </tr>
+
                     <?php endwhile; ?>
                 </tbody>
+
                 <tfoot>
                     <tr>
                         <th colspan="3" class="cart-total-label">Grand Total</th>
@@ -192,10 +187,14 @@ require_once "../includes/header.php";
                         <th></th>
                     </tr>
                 </tfoot>
+
             </table>
         </div>
+
     <?php endif; ?>
+
 </div>
+
 
 <?php
 require_once "../includes/footer.php";
