@@ -60,7 +60,7 @@ include("../includes/header.php");
     </div>
 
     <!-- Navigation -->
-    <div class="card shadow-sm border-0 mb-4"#
+    <div class="card shadow-sm border-0 mb-4">
 
         <div class="card-body">
 
@@ -71,7 +71,7 @@ include("../includes/header.php");
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">My Books</a>
+                    <a class="nav-link" href="../seller/my_books.php">My Books</a>
                 </li>
 
                 <li class="nav-item">
@@ -105,9 +105,7 @@ include("../includes/header.php");
                         Manage your books for sale.
                     </p>
 
-                    <button class="btn btn-success">
-                        Coming Soon
-                    </button>
+                    <a href="../seller/my_books.php"class="btn btn-success">Manage Book</a>
 
                 </div>
 
@@ -153,9 +151,9 @@ include("../includes/header.php");
                         Add a new book listing.
                     </p>
 
-                    <button class="btn btn-primary">
-                        Coming Soon
-                    </button>
+                    <a href="../seller/add_book.php"class="btn btn-primary">
+					Sell a Book
+					</a>
 
                 </div>
 
