@@ -261,13 +261,6 @@ require_once "../includes/header.php";
                                     </a>
 
                                     <a
-                                        href="edit_book.php?id=<?= (int) $book['book_id'] ?>"
-                                        class="book-action-edit"
-                                    >
-                                        Edit
-                                    </a>
-
-                                    <a
                                         href="delete_book.php?id=<?= (int) $book['book_id'] ?>"
                                         class="book-action-delete"
                                         onclick="return confirm('Are you sure you want to delete this book?');"

@@ -127,10 +127,7 @@ include("../includes/header.php");
 
                 <p>View your favourite books.</p>
 
-                <!-- put the PHP here -->
-                <button class="card-button">
-                    Coming Soon
-                </button>
+                <a href="wishlist.php" class="card-button">View Wishlist</a>
 
             </div>
 

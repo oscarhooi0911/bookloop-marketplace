@@ -153,15 +153,12 @@ require_once "../includes/header.php";
 
             </div>
 
-
             <!-- Book Information -->
             <div class="book-detail-content">
 
                 <h2><?= htmlspecialchars($book['title']) ?></h2>
 
-
                 <p class="book-detail-author"><?= htmlspecialchars($book['author']) ?></p>
-
 
                 <p class="book-detail-info">
 
@@ -173,7 +170,6 @@ require_once "../includes/header.php";
 
                 </p>
 
-
                 <p class="book-description">
                     <?= nl2br(
                         htmlspecialchars(
@@ -182,7 +178,6 @@ require_once "../includes/header.php";
                     ) ?>
                 </p>
 
-
                 <p class="book-detail-price">
                     $<?= number_format(
                         (float) $book['price'],
@@ -190,15 +185,10 @@ require_once "../includes/header.php";
                     ) ?>
                 </p>
 
-
                 <!-- Cart and Wishlist -->
                 <form action="cart.php" method="post" class="cart-form">
-
                     <input type="hidden" name="action" value="add">
-
                     <input type="hidden" name="book_id" value="<?= $bookId ?>">
-
-
                     <input
                         type="number"
                         class="quantity-input"
@@ -208,9 +198,7 @@ require_once "../includes/header.php";
                         max="10"
                     >
 
-
-                    <button type="submit" ass="custom-button">Add to cart</button>
-
+                    <button type="submit" class="custom-button">Add to cart</button>
 
                     <?php if ($inWishlist): ?>
 
@@ -218,7 +206,7 @@ require_once "../includes/header.php";
                             href="wishlist_action.php?action=remove&book_id=<?= $bookId ?>"
                             class="custom-button"
                         >
-                            Remove from wishlist
+							Remove from wishlist
                         </a>
 
                     <?php else: ?>
