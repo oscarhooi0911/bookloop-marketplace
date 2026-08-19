@@ -84,7 +84,7 @@ require_once "../includes/header.php";
             <div class="col-md-6 col-lg-4">
 				<div class="card h-100 shadow-sm">
 					<?php if (!empty($book['image'])): ?>
-					<img class="card-img-top" style="height:220px;object-fit:cover" src="../images/<?= rawurlencode($book['image']) ?>" alt="<?= htmlspecialchars($book['title']) ?>">
+					<img class="card-img-top" style="height:220px;object-fit:cover" src="../image/<?= rawurlencode($book['image']) ?>" alt="<?= htmlspecialchars($book['title']) ?>">
 					<?php endif; ?>
 					
 					<div class="card-body d-flex flex-column">

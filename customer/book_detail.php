@@ -60,7 +60,7 @@ require_once "../includes/header.php";
     <a class="text-decoration-none" href="browse_books.php">Back to books</a>
     <div class="card shadow-sm mt-3">
 		<div class="row g-0">
-			<div class="col-md-4"><?php if (!empty($book['image'])): ?><img class="img-fluid rounded-start w-100" style="height:360px;object-fit:cover" src="../images/<?= rawurlencode($book['image']) ?>" alt="<?= htmlspecialchars($book['title']) ?>"><?php endif; ?></div>
+			<div class="col-md-4"><?php if (!empty($book['image'])): ?><img class="img-fluid rounded-start w-100" style="height:360px;object-fit:cover" src="../image/<?= rawurlencode($book['image']) ?>" alt="<?= htmlspecialchars($book['title']) ?>"><?php endif; ?></div>
 				<div class="col-md-8"><div class="card-body h-100 d-flex flex-column">
 					<h2><?= htmlspecialchars($book['title']) ?></h2>
 					<p class="lead text-muted"><?= htmlspecialchars($book['author']) ?></p>
