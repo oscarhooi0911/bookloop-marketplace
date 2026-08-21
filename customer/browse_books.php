@@ -96,6 +96,21 @@ require_once "../includes/header.php";
     </form>
     <div class="book-grid">
         <?php while ($book = mysqli_fetch_assoc($books)): ?>
+            <div class="col-md-6 col-lg-4">
+				<div class="card h-100 shadow-sm">
+					<?php if (!empty($book['image'])): ?>
+					<img class="card-img-top" style="height:220px;object-fit:cover" src="../image/<?= rawurlencode($book['image']) ?>" alt="<?= htmlspecialchars($book['title']) ?>">
+					<?php endif; ?>
+					
+					<div class="card-body d-flex flex-column">
+						<h5><?= htmlspecialchars($book['title']) ?></h5>
+						<p class="text-muted mb-1"><?= htmlspecialchars($book['author']) ?></p>
+						<p class="small mb-2"><?= htmlspecialchars($book['genre']) ?> · <?= htmlspecialchars($book['language']) ?></p>
+						<p class="fw-bold text-success mt-auto mb-3">$<?= number_format((float) $book['price'], 2) ?></p>
+						<a class="btn btn-primary" href="book_detail.php?id=<?= (int) $book['book_id'] ?>">View details</a>
+					</div>
+				</div>
+			</div>
             <div class="book-card">
                 <?php if (!empty($book['image'])): ?>
                     <img class="book-card-image" src="../images/<?= rawurlencode($book['image']) ?>" alt="<?= htmlspecialchars($book['title']) ?>">

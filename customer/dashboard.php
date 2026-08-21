@@ -67,6 +67,7 @@ include("../includes/header.php");
     </div>
 
     <!-- Navigation -->
+    <div class="card shadow-sm border-0 mb-4">
     <div class="dashboard-navigation">
 
         <div class="dashboard-navigation-body">
@@ -79,6 +80,8 @@ include("../includes/header.php");
                     <a class="active" href="#">Home</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="../seller/my_books.php">My Books</a>
                 <li>
                     <a href="#">My Books</a>
                 </li>
@@ -110,6 +113,9 @@ include("../includes/header.php");
 
                 <p>Manage your books for sale.</p>
 
+                    <a href="../seller/my_books.php"class="btn btn-success">Manage Book</a>
+
+                </div>
                 <!-- put the PHP here -->
                 <button class="card-button">Coming Soon</button>
 
@@ -143,6 +149,11 @@ include("../includes/header.php");
 
                 <p>Add a new book listing.</p>
 
+                    <a href="../seller/add_book.php"class="btn btn-primary">
+					Sell a Book
+					</a>
+
+                </div>
                 <!-- put the PHP here -->
                 <button class="card-button">Coming Soon</button>
 
