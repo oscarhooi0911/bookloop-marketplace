@@ -43,7 +43,7 @@ $result = $stmt->get_result();
         <div class="wishlist-grid">
             <?php while ($book = $result->fetch_assoc()): ?>
                 <div class="wishlist-card">
-                    <img src="../image/<?php echo htmlspecialchars($book['image'] ? $book['image'] : 'default.png'); ?>" 
+                    <img src="../images/<?php echo htmlspecialchars($book['image'] ? $book['image'] : 'default.png'); ?>" 
                          alt="<?php echo htmlspecialchars($book['title']); ?>">
                     
                     <h3><?php echo htmlspecialchars($book['title']); ?></h3>
