@@ -76,3 +76,31 @@
     font-size: 1.05rem;
     margin-top: 1rem;
 }
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: 0.25s ease-in-out;
+}
+
+.btn-primary {
+    background-color: #315a86;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #152b45;
+    color: #ffffff;
+}
+
+.btn-danger {
+    background-color: #e63946;
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background-color: #c92f3c;
+    color: #ffffff;
+}

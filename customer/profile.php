@@ -18,72 +18,83 @@ $user = mysqli_fetch_assoc($result);
 include("../includes/header.php");
 ?>
 
-<div class="container mt-5">
 
-<h2>My Profile</h2>
+<div class="profile-page">
 
-<hr>
+    <h2>My Profile</h2>
 
-<div class="text-center mb-4">
+    <hr>
 
-	<img src="../upload/profile/<?php echo $user['profile_picture']; ?>" width="180" height="180" class="rounded-circle border">
+    <div class="profile-picture-section">
+
+        <img
+            src="../upload/profile/<?php echo htmlspecialchars($user['profile_picture']); ?>"
+            width="180"
+            height="180"
+            class="profile-picture-large"
+            alt="Profile Picture"
+        >
+
+    </div>
+
+    <table class="profile-table">
+
+        <tr>
+
+            <th>Name</th>
+
+            <td><?php echo htmlspecialchars($user['full_name']); ?></td>
+
+        </tr>
+
+        <tr>
+
+            <th>Email</th>
+
+            <td><?php echo htmlspecialchars($user['email']); ?></td>
+
+        </tr>
+
+        <tr>
+
+            <th>Phone</th>
+
+            <td><?php echo htmlspecialchars($user['phone']); ?></td>
+
+        </tr>
+
+        <tr>
+
+            <th>Address</th>
+
+            <td><?php echo htmlspecialchars($user['address']); ?></td>
+
+        </tr>
+
+    </table>
+
+
+    <div class="profile-buttons">
+
+        <a href="edit_profile.php" class="profile-button profile-button-primary">
+            Edit Profile
+        </a>
+
+
+        <a href="change_password.php" class="profile-button profile-button-warning">
+            Change Password
+        </a>
+
+
+        <a href="dashboard.php" class="profile-button profile-button-secondary">
+            Back
+        </a>
+
+    </div>
 
 </div>
 
-<table class="table table-bordered">
 
-<tr>
-
-<th>Name</th>
-
-<td><?php echo $user['full_name']; ?></td>
-
-</tr>
-
-<tr>
-
-<th>Email</th>
-
-<td><?php echo $user['email']; ?></td>
-
-</tr>
-
-<tr>
-
-<th>Phone</th>
-
-<td><?php echo $user['phone']; ?></td>
-
-</tr>
-
-<tr>
-
-<th>Address</th>
-
-<td><?php echo $user['address']; ?></td>
-
-</tr>
-
-</table>
-
-<a href="edit_profile.php" class="btn btn-primary">
-
-Edit profile
-
-</a>
-
-<a href="change_password.php" class="btn btn-warning">
-
-Change Password
-
-</a>
-
-<a href="dashboard.php" class="btn btn-secondary">
-
-Back
-
-</a>
-
-</div>
-
-<?php include("../includes/footer.php"); ?>
+<?php
+include("../includes/footer.php");
+?>

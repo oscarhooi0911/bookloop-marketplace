@@ -2,7 +2,7 @@
 include("../authentication/check_login.php");
 include("../database/database.php");
 
-if($_SESSION['role'] != "customer"){
+if ($_SESSION['role'] != "customer") {
     header("Location: ../staff/dashboard.php");
     exit();
 }
@@ -19,37 +19,44 @@ $user = mysqli_fetch_assoc($result);
 include("../includes/header.php");
 ?>
 
-<div class="container mt-5">
+<div class="customer-dashboard">
 
     <!-- Profile Section -->
-    <div class="card shadow border-0 mb-4">
+    <div class="dashboard-profile">
 
-        <div class="card-body">
+        <div class="dashboard-profile-body">
 
-            <div class="d-flex align-items-center">
+            <div class="dashboard-profile-info">
 
-                <img src="../upload/profile/<?php echo $user['profile_picture']; ?>"
-                     width="120"
-                     height="120"
-                     class="rounded-circle border me-4">
+                <img
+                    src="../upload/profile/<?php echo $user['profile_picture']; ?>"
+                    width="120"
+                    height="120"
+                    class="profile-picture"
+                    alt="Profile Picture"
+                >
 
                 <div>
 
-                    <h2 class="mb-1">
-                        <?php echo $user['full_name']; ?>
+                    <h2>
+                        <?php echo htmlspecialchars($user['full_name']); ?>
                     </h2>
 
-                    <p class="text-muted mb-3">
+                    <p class="profile-role">
                         Customer Account
                     </p>
 
-                    <a href="profile.php" class="btn btn-primary me-2">
-                        View Profile
-                    </a>
+                    <div class="dashboard-buttons">
 
-                    <a href="edit_profile.php" class="btn btn-outline-secondary">
-                        Edit Profile
-                    </a>
+                        <a href="profile.php" class="dashboard-button dashboard-button-primary">
+                            View Profile
+                        </a>
+
+                        <a href="edit_profile.php" class="dashboard-button dashboard-button-secondary">
+                            Edit Profile
+                        </a>
+
+                    </div>
 
                 </div>
 
@@ -61,25 +68,30 @@ include("../includes/header.php");
 
     <!-- Navigation -->
     <div class="card shadow-sm border-0 mb-4">
+    <div class="dashboard-navigation">
 
-        <div class="card-body">
+        <div class="dashboard-navigation-body">
 
-            <ul class="nav nav-pills">
-				<!--Replace the "#" to the php-->
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Home</a>
+            <ul class="dashboard-nav">
+
+                <!-- Replace the "#" with the PHP page -->
+
+                <li>
+                    <a class="active" href="#">Home</a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="../seller/my_books.php">My Books</a>
+                <li>
+                    <a href="#">My Books</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Wishlist</a>
+                <li>
+                    <a href="#">Wishlist</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Orders</a>
+                <li>
+                    <a href="#">Orders</a>
                 </li>
 
             </ul>
@@ -89,97 +101,77 @@ include("../includes/header.php");
     </div>
 
     <!-- Dashboard Cards -->
-    <div class="row g-4">
+    <div class="dashboard-cards">
 
-        <div class="col-md-3">
+        <div class="dashboard-card">
 
-            <div class="card shadow-sm text-center h-100">
+            <div class="dashboard-card-body">
 
-                <div class="card-body">
+                <h1>📚</h1>
 
-                    <h1>📚</h1>
+                <h5>My Books</h5>
 
-                    <h5>My Books</h5>
-
-                    <p class="text-muted">
-                        Manage your books for sale.
-                    </p>
+                <p>Manage your books for sale.</p>
 
                     <a href="../seller/my_books.php"class="btn btn-success">Manage Book</a>
 
                 </div>
+                <!-- put the PHP here -->
+                <button class="card-button">Coming Soon</button>
 
             </div>
 
         </div>
 
-        <div class="col-md-3">
+        <div class="dashboard-card">
 
-            <div class="card shadow-sm text-center h-100">
+            <div class="dashboard-card-body">
 
-                <div class="card-body">
+                <h1>❤️</h1>
 
-                    <h1>❤️</h1>
+                <h5>Wishlist</h5>
 
-                    <h5>Wishlist</h5>
+                <p>View your favourite books.</p>
 
-                    <p class="text-muted">
-                        View your favourite books.
-                    </p>
-
-                    <button class="btn btn-warning">
-                        Coming Soon
-                    </button>
-
-                </div>
+                <a href="wishlist.php" class="card-button">View Wishlist</a>
 
             </div>
 
         </div>
 
-        <div class="col-md-3">
+        <div class="dashboard-card">
 
-            <div class="card shadow-sm text-center h-100">
+            <div class="dashboard-card-body">
 
-                <div class="card-body">
+                <h1>➕</h1>
 
-                    <h1>➕</h1>
+                <h5>Sell a Book</h5>
 
-                    <h5>Sell a Book</h5>
-
-                    <p class="text-muted">
-                        Add a new book listing.
-                    </p>
+                <p>Add a new book listing.</p>
 
                     <a href="../seller/add_book.php"class="btn btn-primary">
 					Sell a Book
 					</a>
 
                 </div>
+                <!-- put the PHP here -->
+                <button class="card-button">Coming Soon</button>
 
             </div>
 
         </div>
 
-        <div class="col-md-3">
+        <div class="dashboard-card">
 
-            <div class="card shadow-sm text-center h-100">
+            <div class="dashboard-card-body">
 
-                <div class="card-body">
+                <h1>⚙️</h1>
 
-                    <h1>⚙️</h1>
+                <h5>Settings</h5>
 
-                    <h5>Settings</h5>
+                <p>Update your account settings.</p>
 
-                    <p class="text-muted">
-                        Update your account settings.
-                    </p>
-
-                    <a href="change_password.php" class="btn btn-dark">
-                        Change Password
-                    </a>
-
-                </div>
+                <a href="change_password.php" class="card-button">Change Password</a>
 
             </div>
 
@@ -188,6 +180,7 @@ include("../includes/header.php");
     </div>
 
 </div>
+
 
 <?php
 include("../includes/footer.php");

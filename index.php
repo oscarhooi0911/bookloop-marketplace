@@ -1,88 +1,169 @@
 <?php include("includes/header.php"); ?>
 
+<!-- Hero Section -->
 <div class="image">
 
-    <div class="container d-flex align-items-center">
+    <div class="hero-container">
 
-        <div class="text-start text-white hero-content">
-            <span class="hero-eyebrow">Sustainable stories, shared again</span>
+        <div class="hero-content">
+
+            <span class="hero-eyebrow">
+                Sustainable stories, shared again
+            </span>
+
             <h1>
                 Second-Hand Book Marketplace
             </h1>
 
-            <p class="lead mb-4">
+            <p class="hero-description">
                 Discover affordable second-hand books from readers.
                 Buy books you love, sell books you no longer need,
                 and give every book a new journey.
             </p>
 
             <?php
+
             if (isset($_SESSION['user_id'])) {
+
                 if ($_SESSION['role'] == "staff") {
-                    echo '<a href="staff/dashboard.php" class="btn btn-primary btn-lg">
+
+                    echo '
+                        <a href="staff/dashboard.php" class="custom-btn">
                             Go to Dashboard
-                        </a>';
+                        </a>
+                    ';
+
                 } else {
-                    echo '<a href="customer/dashboard.php" class="btn btn-primary btn-lg">
+
+                    echo '
+                        <a href="customer/dashboard.php" class="custom-btn">
                             Go to Dashboard
-                        </a>';
+                        </a>
+                    ';
+
                 }
+
             } else {
+
             ?>
-                <a href="login.php" class="btn btn-primary btn-lg">
+
+                <a href="login.php" class="custom-btn">
                     Get Started
                 </a>
+
             <?php
+
             }
+
             ?>
+
         </div>
 
     </div>
 
 </div>
 
-<div class="container py-3 feature-row">
-    <div class="row align-items-center feature-box shadow">
-        <div class="col-md-6">
-            <h3>📚 Buy Books</h3>
-            <p class="lead">
+
+<!-- Buy Books -->
+<div class="feature-row">
+
+    <div class="feature-box">
+
+        <div class="feature-content">
+
+            <h3>
+                📚 Buy Books
+            </h3>
+
+            <p>
                 Find affordable second-hand books from other readers.
-                Explore a wide range of books and discover your next favourite read.
+                Explore a wide range of books and discover your next
+                favourite read.
             </p>
+
         </div>
-        <div class="col-md-6 text-center">
-            <img src="image/buy-books.jpg" class="img-fluid rounded shadow feature-img">
+
+
+        <div class="feature-image-container">
+
+            <img
+                src="image/buy-books.jpg"
+                class="feature-img"
+                alt="Buy second-hand books"
+            >
+
         </div>
+
     </div>
+
 </div>
 
-<div class="container py-3 feature-row feature-row-right">
-    <div class="row align-items-center feature-box shadow">
-        <div class="col-md-6 text-center">
-            <img src="image/sell-books.jpg" class="img-fluid rounded shadow feature-img">
+
+<!-- Sell Books -->
+<div class="feature-row feature-row-right">
+
+    <div class="feature-box">
+
+        <div class="feature-image-container">
+
+            <img
+                src="image/sell-books.jpg"
+                class="feature-img"
+                alt="Sell second-hand books"
+            >
+
         </div>
-        <div class="col-md-6">
-            <h3>💰 Sell Books</h3>
-            <p class="lead">
+
+
+        <div class="feature-content">
+
+            <h3>
+                💰 Sell Books
+            </h3>
+
+            <p>
                 Sell books that you no longer need to earn extra money.
             </p>
+
         </div>
+
     </div>
+
 </div>
 
-<div class="container py-3 feature-row">
-    <div class="row align-items-center feature-box shadow">
-        <div class="col-md-6">
-            <h3>🌱 Reuse Books</h3>
-            <p class="lead">
-                Give books a second life and reduce waste by sharing knowledge with others.
+
+<!-- Reuse Books -->
+<div class="feature-row">
+
+    <div class="feature-box">
+
+        <div class="feature-content">
+
+            <h3>
+                🌱 Reuse Books
+            </h3>
+
+            <p>
+                Give books a second life and reduce waste by sharing
+                knowledge with others.
             </p>
+
         </div>
-        <div class="col-md-6 text-center">
-            <img src="image/reuse-books.jpg" class="img-fluid rounded shadow feature-img">
+
+
+        <div class="feature-image-container">
+
+            <img
+                src="image/reuse-books.jpg"
+                class="feature-img"
+                alt="Reuse second-hand books"
+            >
+
         </div>
+
     </div>
+
 </div>
+
 
 <?php include("includes/footer.php"); ?>
-

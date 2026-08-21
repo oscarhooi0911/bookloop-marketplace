@@ -67,8 +67,9 @@ CREATE TABLE IF NOT EXISTS reviews (
     CONSTRAINT review_user FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
+-- Add staff (Password is Oscarhooi@0911)
 INSERT IGNORE INTO users (full_name, email, password, role) VALUES
-('System Administrator', 'admin@bookstore.com', '$2y$10$bGMdkaI3OvL7fMxJCp4.3.f4HUwrC8bw/nFk9GJYNjx3g4/bq0PVu', 'staff');
+('System Administrator', 'admin@bookstore.com', '$2y$10$xNS9vbMO4wRFzM59r6vqWegheUBDxhjrLhfKBt6LznNMFYWzYCAiC', 'staff');
 
 INSERT IGNORE INTO books (book_id, title, author, genre, language, price, book_condition, description, image) VALUES
 (1, 'Database System Concepts', 'Silberschatz', 'Textbook', 'English', 45.00, 'Used - Like New', 'A foundational textbook on database management.', 'database-system.jpg'),
