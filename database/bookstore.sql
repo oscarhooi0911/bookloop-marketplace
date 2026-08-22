@@ -77,3 +77,5 @@ INSERT IGNORE INTO books (book_id, seller_id, title, author, genre, language, pr
 (4, 1,'小王子', '安托万·德·圣-埃克苏佩里', 'Fiction', 'Mandarin', 15.00, 1, 'Used - Like New', 'A classic story about friendship and discovery.', '小王子.jpg'),
 (5, 1,'被讨厌的勇气', '岸见一郎, 古贺史健', 'Novel', 'Mandarin', 18.00, 1, 'Used - Good', 'An introduction to Adlerian psychology.', '被讨厌的勇气.jpg'),
 (6, 1,'平凡的世界', '路遥', 'Novel', 'Mandarin', 22.50, 1, 'Used - Acceptable', 'A portrait of ordinary lives and resilience.', '平凡的世界.jpg');
+
+-- Noted: Customer Login password is Amely@123456789 (amely@gmail.com)
