@@ -3,11 +3,7 @@
 A lightweight web application for listing, browsing, and managing second-hand books. Features user authentication, role-based access control (Customers, Sellers, Staff), item management, cart, wishlist, and customer review capabilities.
 
 ---
-# Second-Hand Book Marketplace Setup & Installation Guide
 
-This guide covers everything required to install WampServer, configure Apache and MySQL, import the database schema, and run the project.
-
----
 ## Prerequisites
 Ensure you have the following installed on your system:
 (Skip Part 1 if already installed)
