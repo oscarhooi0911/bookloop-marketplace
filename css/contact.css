@@ -1,7 +1,4 @@
-/* =========================
-   General
-========================= */
-
+/*General*/
 * {
     box-sizing: border-box;
 }
@@ -13,21 +10,13 @@ body {
     color: #2b2d42;
 }
 
-
-/* =========================
-   Contact Page
-========================= */
-
+/*Contact Page*/
 .contact-page {
     width: 100%;
     padding: 50px 20px;
 }
 
-
-/* =========================
-   Header
-========================= */
-
+/*Header*/
 .contact-header {
     text-align: center;
     margin-bottom: 40px;
@@ -43,11 +32,7 @@ body {
     font-size: 16px;
 }
 
-
-/* =========================
-   Main Container
-========================= */
-
+/*Main Container*/
 .contact-container {
     max-width: 1100px;
     margin: 0 auto;
@@ -58,11 +43,7 @@ body {
     gap: 30px;
 }
 
-
-/* =========================
-   Contact Information
-========================= */
-
+/*Contact Information*/
 .contact-info,
 .contact-form {
     background-color: #ffffff;
@@ -83,11 +64,7 @@ body {
     line-height: 1.6;
 }
 
-
-/* =========================
-   Contact Items
-========================= */
-
+/*Contact Items*/
 .contact-item {
     margin-top: 25px;
 }
@@ -113,10 +90,7 @@ body {
 }
 
 
-/* =========================
-   Social Media
-========================= */
-
+/*Social Media*/
 .social-links {
     margin-top: 30px;
 }
@@ -127,10 +101,8 @@ body {
 
 .social-links a {
     display: inline-block;
-
     margin-right: 10px;
     margin-bottom: 10px;
-
     color: #4a6fa5;
     text-decoration: none;
 }
@@ -139,11 +111,7 @@ body {
     text-decoration: underline;
 }
 
-
-/* =========================
-   Form
-========================= */
-
+/*Form*/
 .form-group {
     margin-bottom: 20px;
 }
@@ -156,92 +124,58 @@ body {
     font-weight: bold;
 }
 
-
 .form-group input,
 .form-group textarea {
     width: 100%;
-
     padding: 12px;
-
     border: 1px solid #ced4da;
     border-radius: 6px;
-
     font-size: 15px;
-
     font-family: Arial, sans-serif;
 }
-
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-
     border-color: #4a6fa5;
-
     box-shadow: 0 0 0 2px rgba(74, 111, 165, 0.1);
 }
-
 
 .form-group textarea {
     resize: vertical;
 }
 
 
-/* =========================
-   Error
-========================= */
-
+/*Error*/
 .error-message {
     margin-top: 6px;
-
     color: #dc3545;
-
     font-size: 14px;
 }
 
 
-/* =========================
-   Success
-========================= */
-
+/*Success*/
 .success-message {
     margin-bottom: 20px;
-
     padding: 12px 15px;
-
     background-color: #d4edda;
-
     color: #155724;
-
     border: 1px solid #c3e6cb;
-
     border-radius: 6px;
-
     font-size: 14px;
 }
 
 
-/* =========================
-   Button
-========================= */
-
+/*Button*/
 .contact-button {
     width: 100%;
-
     padding: 13px;
-
     border: none;
-
     border-radius: 6px;
-
     background-color: #4a6fa5;
-
     color: #ffffff;
-
     font-size: 16px;
-
     font-weight: bold;
-
     cursor: pointer;
 }
 
@@ -250,22 +184,13 @@ body {
     background-color: #335384;
 }
 
-
-/* =========================
-   Map
-========================= */
-
+/*Map*/
 .map-section {
     max-width: 1100px;
-
     margin: 40px auto 0;
-
     background-color: #ffffff;
-
     padding: 30px;
-
     border-radius: 10px;
-
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
@@ -276,17 +201,12 @@ body {
 
 .map-section iframe {
     display: block;
-
     width: 100%;
-
     border-radius: 6px;
 }
 
 
-/* =========================
-   Responsive
-========================= */
-
+/*Responsive*/
 @media (max-width: 768px) {
 
     .contact-container {

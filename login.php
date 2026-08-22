@@ -23,11 +23,8 @@
     <div class="auth-left">
 
         <div class="auth-overlay">
-
             <h1>Second-Hand Book Marketplace</h1>
-
             <p>Buy. Sell. Read Again.</p>
-
         </div>
 
     </div>
@@ -37,21 +34,15 @@
     <div class="auth-right">
 
         <div class="auth-card">
-
             <h2>Welcome back</h2>
-
-            <p class="auth-subtitle">
-                Login to your account
-            </p>
+            <p class="auth-subtitle">Login to your account</p>
 
 
             <form action="authentication/login_process.php" method="POST">
 
                 <!-- Email -->
                 <div class="form-group">
-
                     <label for="email">Email Address</label>
-
                     <input
                         type="email"
                         id="email"
@@ -59,17 +50,13 @@
                         placeholder="Enter your email"
                         required
                     >
-
                 </div>
 
 
                 <!-- Password -->
                 <div class="form-group">
-
                     <label for="password">Password</label>
-
                     <div class="password-group">
-
                         <input
                             type="password"
                             id="password"
@@ -77,7 +64,6 @@
                             placeholder="Enter your password"
                             required
                         >
-
                         <button
 							type="button"
 							class="password-toggle"
@@ -86,25 +72,17 @@
 						>
 							<span id="eyeIcon">👁</span>
 						</button>
-
                     </div>
-
                 </div>
 
 
                 <!-- Remember Me / Forgot Password -->
                 <div class="login-options">
-
                     <div class="remember-me">
-
                         <input type="checkbox" id="remember" name="remember">
-
                         <label for="remember">Remember me</label>
-
                     </div>
-
                     <a href="forgot_password.php">Forgot Password?</a>
-
                 </div>
 
                 <!-- Error Messages -->
@@ -155,17 +133,13 @@
 
                 <!-- Login Button -->
                 <button type="submit" class="auth-button">Login</button>
-
             </form>
-
             <hr>
 
             <!-- Register Link -->
             <p class="auth-footer">
-			
                 Don't have an account?
                 <a href="register.php">Register Here</a>
-
             </p>
 
         </div>
