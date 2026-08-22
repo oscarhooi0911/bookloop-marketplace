@@ -66,9 +66,25 @@ CREATE TABLE IF NOT EXISTS reviews (
     CONSTRAINT review_user FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
--- Add staff (Password is Oscarhooi@0911)
-INSERT IGNORE INTO users (full_name, email, password, role) VALUES
-('System Administrator', 'admin@bookstore.com', '$2y$10$xNS9vbMO4wRFzM59r6vqWegheUBDxhjrLhfKBt6LznNMFYWzYCAiC', 'staff');
+-- Add default staff (Password is Oscarhooi@0911)
+INSERT IGNORE INTO users (full_name, email, password, role) 
+VALUES(
+	'System Administrator', 
+	'admin@bookstore.com', 
+	'$2y$10$xNS9vbMO4wRFzM59r6vqWegheUBDxhjrLhfKBt6LznNMFYWzYCAiC', 
+	'staff');
+
+-- Add default customer account (Password: Amely@123456789)
+INSERT IGNORE INTO users (full_name, email, password, phone, address, role, profile_picture) 
+VALUES (
+    'Amely Customer', 
+    'amely@gmail.com', 
+    '$2y$10$8xV5pL9yKqXzWnRtYj3xXeZ4mN6oP8qR1sT2uV3wX4yZ5aB6cD7eF8gH9iJ', 
+    '012-3456789', 
+    '123 Jalan Sungai Long, Bandar Sungai Long, 43000 Kajang, Selangor', 
+    'customer', 
+    'default.png'
+);
 
 INSERT IGNORE INTO books (book_id, seller_id, title, author, genre, language, price, quantity, book_condition, description, image) VALUES
 (1, 1,'Database System Concepts', 'Silberschatz', 'Textbook', 'English', 45.00, 1, 'Used - Like New', 'A foundational textbook on database management.', 'database-system.jpg'),
@@ -77,5 +93,3 @@ INSERT IGNORE INTO books (book_id, seller_id, title, author, genre, language, pr
 (4, 1,'小王子', '安托万·德·圣-埃克苏佩里', 'Fiction', 'Mandarin', 15.00, 1, 'Used - Like New', 'A classic story about friendship and discovery.', '小王子.jpg'),
 (5, 1,'被讨厌的勇气', '岸见一郎, 古贺史健', 'Novel', 'Mandarin', 18.00, 1, 'Used - Good', 'An introduction to Adlerian psychology.', '被讨厌的勇气.jpg'),
 (6, 1,'平凡的世界', '路遥', 'Novel', 'Mandarin', 22.50, 1, 'Used - Acceptable', 'A portrait of ordinary lives and resilience.', '平凡的世界.jpg');
-
--- Noted: Customer Login password is Amely@123456789 (amely@gmail.com)
